@@ -1,4 +1,4 @@
-package class_05.badDesign;
+package class_05.badDesignSRP;
 
 import java.util.Date;
 
