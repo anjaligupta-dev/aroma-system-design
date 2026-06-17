@@ -35,3 +35,13 @@ public class Main {
     }
 }
 
+/* *
+    Output :
+        Singleton constructor
+        Print Method
+        Print Method
+
+        Print Method
+        Print Method
+* */
+
