@@ -15,3 +15,4 @@ public class Singleton {
         System.out.println("Print Method");
     }
 }
+
