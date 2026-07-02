@@ -3,7 +3,7 @@ package class_11.builderDP.PizzaEg;
 public class Main {
     public static void main(String[] args) {
         PizzaOrder order1 =
-                new PizzaOrder.PizzaOrderBuilder(
+                new PizzaOrder.Builder(
                         "Farmhouse",
                         PizzaSize.LARGE)
                         .crustType(CrustType.THIN_CRUST)
@@ -17,11 +17,11 @@ public class Main {
                         .build();
 
         System.out.println(order1);
-
         System.out.println("-----------------------------------------");
 
+
         PizzaOrder order2 =
-                new PizzaOrder.PizzaOrderBuilder(
+                new PizzaOrder.Builder(
                         "Veggie Delight",
                         PizzaSize.MEDIUM)
                         .extraCheese(true)
@@ -30,16 +30,33 @@ public class Main {
                         .build();
 
         System.out.println(order2);
-
         System.out.println("-----------------------------------------");
 
+
         PizzaOrder order3 =
-                new PizzaOrder.PizzaOrderBuilder(
+                new PizzaOrder.Builder(
                         "Margherita",
                         PizzaSize.SMALL)
                         .build();
 
         System.out.println(order3);
+        System.out.println("-----------------------------------------");
+
+
+        // Invalid Order - Demonstrating Cross-field Validation
+        try {
+            PizzaOrder order4 =
+                    new PizzaOrder.Builder(
+                            "Cheese Burst",
+                            PizzaSize.SMALL)
+                            .crustType(CrustType.CHEESE_BURST)
+                            .extraCheese(true)
+                            .build();
+
+            System.out.println(order4);
+        } catch (Exception e) {
+            System.out.println("Exception : " + e.getMessage());
+        }
     }
 }
 
@@ -85,5 +102,7 @@ public class Main {
          giftWrap=false,
          contactlessDelivery=false,
          specialInstructions=''
+        -----------------------------------------
+        Exception : Extra cheese is already included in Cheese Burst pizzas.
 
 * */
