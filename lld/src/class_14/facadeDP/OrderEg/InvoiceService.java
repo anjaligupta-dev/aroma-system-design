@@ -1,0 +1,7 @@
+package class_14.facadeDP.OrderEg;
+
+public class InvoiceService {
+    public void generateInvoice() {
+        System.out.println("Invoice generated.");
+    }
+}
